@@ -1,0 +1,8 @@
+{
+  "name": "joe",
+  "description": "AI-assisted development plugin for Claude Code",
+  "version": "0.1.0",
+  "author": {
+    "name": "boom"
+  }
+}
