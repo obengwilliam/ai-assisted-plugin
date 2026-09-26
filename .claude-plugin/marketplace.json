@@ -1,0 +1,16 @@
+{
+  "name": "joe",
+  "owner": {
+    "name": "boom"
+  },
+  "metadata": {
+    "description": "AI-assisted development plugin for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "joe",
+      "source": "./",
+      "description": "AI-assisted development plugin for Claude Code"
+    }
+  ]
+}
