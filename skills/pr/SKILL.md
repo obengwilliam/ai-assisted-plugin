@@ -1,6 +1,6 @@
 ---
 name: pr
-description: "Use when writing a PR body. Always fills the caller repo's own PR template from .github."
+description: "Use when writing a PR body. Fills the caller repo's own PR template from .github, falling back to a default template when none exists."
 metadata:
   credits:
     skill: pr
@@ -15,7 +15,7 @@ metadata:
 
 ## Template
 
-Never use a built-in or default template. Always use the PR template defined in the caller's repository.
+Always prefer the PR template defined in the caller's repository.
 
 Look for it, in this order, from the repo root:
 
@@ -23,9 +23,30 @@ Look for it, in this order, from the repo root:
 2. `.github/PULL_REQUEST_TEMPLATE/*.md` — if there are several, pick the one that fits the change, or ask the user
 3. `pull_request_template.md` or `docs/pull_request_template.md` (GitHub's other supported locations)
 
-If no template exists, stop and ask the user for one. Do not invent a template.
+Only if none of these exist, fall back to this default template:
 
-Fill the template exactly as written:
+```markdown
+## Summary
+
+<diagram, diff-sketch, or tree>
+
+## Evidence
+
+- **Before:** <screenshot/output/failing test run>
+  **After:** <screenshot/output/passing test run>
+
+## Merge Danger
+
+**Door:** <one-way or two-way>
+
+<optional: description>
+
+**Blast Radius:** <one-word description>
+
+<optional: potential ramifications of merge>
+```
+
+Fill whichever template you use exactly as written:
 
 - Keep every heading, in order. Do not add, rename, or drop sections.
 - Keep checklists; tick only the items the diff actually satisfies.
